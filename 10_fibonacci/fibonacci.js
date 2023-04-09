@@ -1,6 +1,18 @@
-const fibonacci = function() {
-
+const fibonacci = function(num) {
+    if (num < 0) {
+        return "OOPS";
+    }
+    num = parseInt(num);
+    let fib = [1, 1];
+    for (let i = 0; i < num + 1; i++) {
+        fib.push(fib[i] + fib[i + 1]);
+    }
+    return fib[num - 1];
 };
+
+/**
+ * fib = [1, 1, 2, 3, 5, 8, 13]
+ */
 
 // Do not edit below this line
 module.exports = fibonacci;
